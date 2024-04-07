@@ -36,7 +36,7 @@ DEFAULT_FROM_EMAIL = 'navam.obeysekara@gmail.com'
 EMAIL_HOST_USER = 'navam.obeysekara@gmail.com'
 EMAIL_HOST_PASSWORD = 'azhtybveluwsysaq'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
