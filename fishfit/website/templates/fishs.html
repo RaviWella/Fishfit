@@ -1,0 +1,254 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Fishs</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href=" {% static 'website/css/bootstrap.min.css' %} ">
+      <!-- style css -->
+      <link rel="stylesheet" href=" {% static 'website/css/style.css' %} ">
+      <!-- Responsive-->
+      <link rel="stylesheet" href=" {% static 'website/css/responsive.css' %} ">
+      <!-- fevicon -->
+      <link rel="icon" href=" {% static 'website/images/fevicon.png' %} " type="image/gif" />
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href=" {% static 'website/css/owl.carousel.min.css' %} ">
+      <link rel="icon" type="image/x-icon" href="{% static 'website/images/title_logo.jpeg' %}">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src=" {% static 'website/images/loading.gif' %} " alt="#"/></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <div class="header">
+         <div class="container-fluid">
+            <div class="row d_flex">
+               <div class=" col-md-2 col-sm-3 logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo">
+                           <a href=" {% static 'website/../index.html' %} "><img src=" {% static 'website/images/logo.png' %} " alt="#" /></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-8 col-md-10 col-sm-9">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav mr-auto">
+                           <li class="nav-item">
+                              <a class="nav-link" href="index.html"><b>Home</b></a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="about.html" ><b>About</b></a>
+                           <li class="nav-item active">
+                              <a class="nav-link" href="fishs.html"><b>Fishs</b></a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="blog.html"><b>Blog</b></a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="testimonial.html"><b>Testimonial</b></a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="contact.html"><b>contact us</b></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+               {% if not request.user.is_authenticated %}
+               <div class="col-md-2 d_none">
+                  <ul class="email text_align_right">
+                     <b> Welcome!</b>
+                     <li><a href="../login.html"><b>Login</b> <img src=" {% static 'website/images/use.png' %} " alt="#"/></a></li>
+                 </ul>
+               </div>
+
+               {% else %}
+
+               <div class="col-md-2 d_none">
+                  <ul class="email text_align_right">
+                     <h4> Welcome {{request.user}}</h4>
+                     <li><a href="/logout"><b>Logout</b> <img src=" {% static 'website/images/use.png' %} " alt="#"/></a></li>
+                 </ul>
+               </div>
+
+               {% endif %}
+            </div>
+         </div>
+      </div>
+      <!-- end header inner -->
+      <!-- our_fishs -->
+      <div class="our_fishs">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center">
+                     <h2>Our Fishs Store</h2>
+                     <p>We are planning to conduct a fish store with our official web application. Here is a sample of what it will look like!  
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <!--  Demos -->
+                  <div class="owl-carousel owl-theme">
+                     <div class="item">
+                        <div class="our_fishs_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src=" {% static 'website/images/our_fish1.jpg' %} " alt="#"/></figure>
+                           </div>
+                           <h3>Gabor-szuts</h3>
+                           <strong>Rs<span>20000</span> 
+                           </strong>
+                           <a class="read_more" href="#">Buy Now</a>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="our_fishs_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src=" {% static 'website/images/our_fish2.jpg' %} " alt="#"/></figure>
+                           </div>
+                           <h3>fighting-fish</h3>
+                           <strong>Rs<span>1500</span> 
+                           </strong>
+                           <a class="read_more" href="#">Buy Now</a>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="our_fishs_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src=" {% static 'website/images/our_fish3.jpg' %} " alt="#"/></figure>
+                           </div>
+                           <h3>Isolated</h3>
+                           <strong>Rs<span>45000</span> 
+                           </strong>
+                           <a class="read_more" href="#">Buy Now</a>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="our_fishs_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src=" {% static 'website/images/our_fish4.jpg' %} " alt="#"/></figure>
+                           </div>
+                           <h3>tropical-fish</h3>
+                           <strong>Rs<span>56000</span> 
+                           </strong>
+                           <a class="read_more" href="#">Buy Now</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center">
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+
+                     <h2>Rare Fish Collection</h2>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-12">
+                  <!--  Demos -->
+                  <div class="owl-carousel owl-theme">
+                     <div class="item">
+                        <div class="our_fishs_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src=" {% static 'website/images/our_fish5.jpg' %} " alt="#"/></figure>
+                           </div>
+                           <h3>Lake sturgeon</h3>
+                           <strong><span>1 Million</span> 
+                           </strong>
+                           <a class="read_more" href="#">Buy Now</a>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="our_fishs_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src=" {% static 'website/images/our_fish6.jpg' %} " alt="#"/></figure>
+                           </div>
+                           <h3>Butterfly loach</h3>
+                           <strong>Rs.<span>989,999</span> 
+                           </strong>
+                           <a class="read_more" href="#">Buy Now</a>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="our_fishs_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src=" {% static 'website/images/our_fish7.jpg' %} " alt="#"/></figure>
+                           </div>
+                           <h3>Chapultepec</h3>
+                           <strong><span>2 Million</span> 
+                           </strong>
+                           <a class="read_more" href="#">Buy Now</a>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="our_fishs_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src=" {% static 'website/images/our_fish8.jpg' %} " alt="#"/></figure>
+                           </div>
+                           <h3>Smalltooth</h3>
+                           <strong><span>3.2 Million</span> 
+                           </strong>
+                           <a class="read_more" href="#">Buy Now</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+         </div>
+      </div>
+      <!-- end our_fishs -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+   
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src=" {% static 'website/js/jquery.min.js' %} "></script>
+      <script src=" {% static 'website/js/bootstrap.bundle.min.js' %} "></script>
+      <script src=" {% static 'website/js/jquery-3.0.0.min.js' %} "></script>
+      <script src=" {% static 'website/js/jquery.nice-select.min.js' %} "></script>
+      <!-- sidebar -->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src=" {% static 'website/js/owl.carousel.min.js' %} "></script>
+      <script src=" {% static 'website/js/custom.js' %} "></script>
+      <script>  AOS.init();</script>
+   </body>
+</html>
